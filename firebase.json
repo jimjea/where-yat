@@ -1,0 +1,9 @@
+{
+  "firebase": "where-yat",
+  "public": "./client",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
