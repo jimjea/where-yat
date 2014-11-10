@@ -3,13 +3,20 @@
   <meta charset="utf-8" />
   <title>Where-Yat</title>
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
-  <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
-  <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
 </head>
 <body ng-app="where-yat">
   <h2>Where Yat</h2>
 
   <div ui-view></div>
 
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+  <script src="https://cdn.firebase.com/js/simple-login/1.6.3/firebase-simple-login.js"></script>
+
+  <script src="app/auth/auth.js"></script>
+  <script src="app/auth/services.js"></script>
+  <script src="app/app.js"></script>
 </body>
 </html>

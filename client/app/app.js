@@ -1,8 +1,9 @@
 angular.module('where-yat',[
   'firebase',
-  'where-yat.auth'
+  'where-yat.auth',
+  'where-yat.authServices',
 ])
 
 .config(function($urlRouterProvider) {
-  $urlRouterProvider.otherwise('/signin');
+  $urlRouterProvider.otherwise('/auth');
 })
