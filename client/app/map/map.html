@@ -1,7 +1,9 @@
 <div>
   <div ng-click="logout()">Log Out</div>
   <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-    <ui-gmap-marker coords="map.center" idKey="id">
+    <ui-gmap-marker coords="user.position" idKey="user.id">
+    </ui-gmap-marker>
+    <ui-gmap-marker coords="allUsers.position" idKey="user.id">
     </ui-gmap-marker>
     <!-- add all other people as dots -->
   </ui-gmap-google-map>

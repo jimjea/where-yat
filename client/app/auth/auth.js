@@ -9,15 +9,10 @@ angular.module('where-yat.auth', ['ui.router'])
     })
 })
 
-.controller('AuthController', function($scope, $state, Auth) {
+.controller('AuthController', function($scope, $state, Auth, $location) {
   $scope.signin = function() {
     Auth.authUser();
     $state.go('map');
   }
 
-
-  // SAVE USER DATA (USERNAME, FB ID, GENDER, TIMESTAMP, LOCATION)
-    // FIRST SAVE THE USERNAME AND ID AND GENDER
-      // CHECK AGAINST UNIQUE USER ID
-        // SAVE LOCATION DATA BASED ON UNIQUE ID
 })

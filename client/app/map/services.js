@@ -16,7 +16,8 @@ angular.module('where-yat.mapServices', [])
           gender: user.thirdPartyUserData.gender,
           picture: user.thirdPartyUserData.picture.data.url,
           lat: position.coords.latitude,
-          lng: position.coords.longitude
+          lng: position.coords.longitude,
+          timeStamp: Firebase.ServerValue.TIMESTAMP
         })
       })
       // location.point = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -29,7 +30,24 @@ angular.module('where-yat.mapServices', [])
   }
 
 
+  var getAllLocations = function() {
+    var everyone = [];
+    var defer = $q.defer();
+
+    ref.on('child_added', function(children) {
+      everyone.push(children.val());
+      defer.resolve(everyone);
+    })
+
+    return defer.promise;
+
+  }
+
+
+
+
   return {
-    getCurrentLocation: getCurrentLocation
+    getCurrentLocation: getCurrentLocation,
+    getAllLocations: getAllLocations
   }
 })

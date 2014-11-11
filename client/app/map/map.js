@@ -16,15 +16,28 @@ angular.module('where-yat.map',['ui.router', 'google-maps'.ns()])
   }
 
   // sets the center of the map and has the marker logic for the user
-  $scope.getlocation = function() {
+  $scope.getCurrentLocation = function() {
     Map.getCurrentLocation().then(function(data) {
-      $scope.id = 0;
+      $scope.user = {
+        id: 0,
+        position: {
+          latitude: data.lat,
+          longitude: data.lng
+        }
+      };
       $scope.map = {center: {
         latitude: data.lat,
-        longitude: data.lng}, zoom: 13
+        longitude: data.lng}, zoom: 18
       }
     })
   }
 
-  $scope.getlocation();
+  $scope.getAllLocations = function() {
+    Map.getAllLocations().then(function(data) {
+      $scope.allUsers = data;
+    })
+  }
+
+  $scope.getAllLocations();
+  $scope.getCurrentLocation();
 })
