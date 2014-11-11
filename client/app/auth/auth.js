@@ -12,7 +12,7 @@ angular.module('where-yat.auth', ['ui.router'])
 .controller('AuthController', function($scope, $state, Auth, $location) {
   $scope.signin = function() {
     Auth.authUser();
-    $state.go('map');
+    $location.path('map');
   }
 
 })

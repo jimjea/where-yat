@@ -1,10 +1,17 @@
 <div>
   <div ng-click="logout()">Log Out</div>
   <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+    <!-- Marker for the user -->
     <ui-gmap-marker coords="user.position" idKey="user.id">
     </ui-gmap-marker>
-    <ui-gmap-marker ng-repeat="users in allUsers" coords="{latitude: users.lat, longitude: users.lng}" idKey="users.id">
+
+    <!-- Marker for the guys -->
+    <ui-gmap-marker ng-repeat="users in allUsers[1]" coords="{latitude: users.lat, longitude: users.lng}" idKey="users.id">
     </ui-gmap-marker>
-    <!-- add all other people as dots -->
+
+    <!-- Marker for the girls -->
+    <ui-gmap-marker ng-repeat="users in allUsers[0]" coords="{latitude: users.lat, longitude: users.lng}" idKey="users.id">
+    </ui-gmap-marker>
+    
   </ui-gmap-google-map>
 </div>
