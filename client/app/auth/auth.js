@@ -12,7 +12,6 @@ angular.module('where-yat.auth', ['ui.router'])
 .controller('AuthController', function($scope, $state, Auth) {
   $scope.signin = Auth.authUser;
   $scope.logout = function() {
-    console.log('yeah')
     $state.go('auth');
     Auth.logoutUser();
   }
