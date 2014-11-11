@@ -6,12 +6,12 @@
     </ui-gmap-marker>
 
     <!-- Marker for the guys -->
-    <ui-gmap-marker ng-repeat="users in allUsers[1]" coords="{latitude: users.lat, longitude: users.lng}" idKey="users.id">
+    <ui-gmap-marker class="guys" ng-repeat="users in allUsers[1]" coords="{latitude: users.lat, longitude: users.lng}" idKey="users.id" icon="guys">
     </ui-gmap-marker>
 
     <!-- Marker for the girls -->
-    <ui-gmap-marker ng-repeat="users in allUsers[0]" coords="{latitude: users.lat, longitude: users.lng}" idKey="users.id">
+    <ui-gmap-marker class="girls" ng-repeat="users in allUsers[0]" coords="{latitude: users.lat, longitude: users.lng}" idKey="users.id" icon="girls">
     </ui-gmap-marker>
-    
+
   </ui-gmap-google-map>
 </div>

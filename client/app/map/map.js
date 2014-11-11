@@ -38,6 +38,13 @@ angular.module('where-yat.map',['ui.router', 'google-maps'.ns()])
     })
   }
 
+  $scope.guys = {
+    url: './assets/guys.png',
+  };
+  $scope.girls = {
+    url: './assets/girls.png',
+  };
+
   $scope.getAllLocations();
   $scope.getCurrentLocation();
 })
