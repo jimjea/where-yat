@@ -10,11 +10,11 @@ angular.module('where-yat.auth', ['ui.router'])
 })
 
 .controller('AuthController', function($scope, $state, Auth) {
-  $scope.signin = Auth.authUser;
-  $scope.logout = function() {
-    $state.go('auth');
-    Auth.logoutUser();
+  $scope.signin = function() {
+    Auth.authUser();
+    $state.go('map');
   }
+
 
   // SAVE USER DATA (USERNAME, FB ID, GENDER, TIMESTAMP, LOCATION)
     // FIRST SAVE THE USERNAME AND ID AND GENDER

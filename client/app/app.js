@@ -3,6 +3,7 @@ angular.module('where-yat',[
   'where-yat.auth',
   'where-yat.authServices',
   'where-yat.map',
+  'where-yat.mapServices',
 ])
 
 .config(function($urlRouterProvider) {
