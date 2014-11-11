@@ -12,6 +12,7 @@ angular.module('where-yat.mapServices', [])
     navigator.geolocation.getCurrentPosition(function(position) {
       login.$getCurrentUser().then(function(user) {
         ref.child(user.id).set({
+          id: user.id,
           displayname: user.displayName,
           gender: user.thirdPartyUserData.gender,
           picture: user.thirdPartyUserData.picture.data.url,
@@ -32,11 +33,12 @@ angular.module('where-yat.mapServices', [])
 
   var getAllLocations = function() {
     var everyone = [];
+    var newObj = {};
     var defer = $q.defer();
 
     ref.on('child_added', function(children) {
-      everyone.push(children.val());
-      defer.resolve(everyone);
+      everyone.push(children.val())
+      defer.resolve(everyone)
     })
 
     return defer.promise;
