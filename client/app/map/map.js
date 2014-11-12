@@ -19,15 +19,23 @@ angular.module('where-yat.map',['ui.router', 'google-maps'.ns()])
   $scope.getCurrentLocation = function() {
     Map.getCurrentLocation().then(function(data) {
       $scope.user = {
-        id: 0,
+        pic: data.pic,
+        id: data.id,
         position: {
           latitude: data.lat,
           longitude: data.lng
         }
       };
-      $scope.map = {center: {
-        latitude: data.lat,
-        longitude: data.lng}, zoom: 18
+      $scope.map = {
+        center: {
+          latitude: data.lat,
+          longitude: data.lng
+        }, 
+        zoom: 18,
+        minZoom: 25,
+        options: {
+          
+        }
       }
     })
   }

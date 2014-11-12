@@ -20,10 +20,12 @@ angular.module('where-yat.mapServices', [])
           lng: position.coords.longitude,
           timeStamp: Firebase.ServerValue.TIMESTAMP
         })
+        location.pic = user.thirdPartyUserData.picture.data.url;
+        location.lng = position.coords.longitude;
+        location.lat = position.coords.latitude;
+        location.id = user.id;
+        defer.resolve(location);
       })
-      location.lng = position.coords.longitude;
-      location.lat = position.coords.latitude;
-      defer.resolve(location);
     })
 
     return defer.promise;
