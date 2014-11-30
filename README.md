@@ -1,4 +1,4 @@
 Where-Yat
 =========
 
-A real-time application allowing you to see who is out and about at any given time!
+A real-time application allowing you to see who is out and about at any given time. Built in angular and firebase
